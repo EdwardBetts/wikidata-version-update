@@ -1,0 +1,45 @@
+[build-system]
+requires = ["hatchling"]
+build-backend = "hatchling.build"
+
+[project]
+name = "wikidata-version-update"
+version = "0.1.0"
+description = "Command-line tool for automatically updating software version information on Wikidata"
+readme = "README.md"
+license = "MIT"
+requires-python = ">=3.10"
+authors = [
+    {name = "Edward Betts", email = "edward@4angle.com"},
+]
+classifiers = [
+    "Development Status :: 4 - Beta",
+    "Environment :: Console",
+    "Intended Audience :: Developers",
+    "License :: OSI Approved :: MIT License",
+    "Operating System :: OS Independent",
+    "Programming Language :: Python :: 3",
+    "Programming Language :: Python :: 3.10",
+    "Programming Language :: Python :: 3.11",
+    "Programming Language :: Python :: 3.12",
+    "Programming Language :: Python :: 3.13",
+    "Topic :: Software Development :: Libraries :: Python Modules",
+    "Topic :: Internet :: WWW/HTTP :: Dynamic Content :: Wiki",
+]
+keywords = ["wikidata", "version", "release", "automation", "wiki"]
+
+dependencies = [
+    "click>=8.0.0",
+    "requests>=2.25.0",
+]
+
+[project.urls]
+Homepage = "https://github.com/edwardbetts/wikidata-version-update"
+Repository = "https://github.com/edwardbetts/wikidata-version-update"
+Issues = "https://github.com/edwardbetts/wikidata-version-update/issues"
+
+[project.scripts]
+wikidata-update = "wikidata_update:main"
+
+[tool.hatch.build.targets.wheel]
+packages = ["wikidata_update"]
